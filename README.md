@@ -50,3 +50,60 @@ Chỉ cần nhắn lại tin nhắn của bot với các lệnh sau:
 - Các thư đã đọc sẽ tự động bị dời sang thư mục `data/processed`.
 - Nếu AI phân loại sai thường xuyên, bạn có thể dạy AI thêm từ khóa ở biến `RULES` trong `config.py`.
 - Nếu file Excel `so_dang_ky.xlsx` đang được mở bằng phần mềm khác, hệ thống sẽ không ghi được dữ liệu. Hãy tắt file đó đi trước khi "Kiểm tra thư".
+___________________________________________________________________________________________________________________________________________________________________
+
+Để triển khai hệ thống **Phân Thư Tự Động** này trên một PC mới tinh, bạn cần cài đặt và cấu hình theo các bước chi tiết sau:
+
+### 1. Cài đặt các phần mềm nền tảng (Yêu cầu hệ thống)
+Trên PC mới, bạn cần tải và cài đặt 3 công cụ cốt lõi sau:
+
+*   **Python:** Tải và cài đặt [Python](https://www.python.org/downloads/) (khuyến nghị phiên bản 3.10 trở lên). Khi cài đặt, hãy nhớ tích vào ô **"Add Python.exe to PATH"**.
+*   **Node.js:** Tải và cài đặt [Node.js](https://nodejs.org/en/) (khuyến nghị phiên bản LTS). Để chạy máy chủ WhatsApp.
+*   **Ollama:** Tải và cài đặt [Ollama](https://ollama.com/) dành cho Windows. Công cụ này dùng để chạy mô hình AI cục bộ trên máy bạn.
+
+### 2. Thiết lập Trí tuệ Nhân tạo (Ollama AI)
+Sau khi cài đặt xong Ollama, bạn cần tải mô hình AI `phi3:mini` (mô hình ngôn ngữ mà mã nguồn đang sử dụng).
+*   Mở **Command Prompt (cmd)** hoặc PowerShell.
+*   Chạy lệnh sau và chờ hệ thống tải mô hình về (dung lượng khoảng 2.3GB):
+*   
+    ollama run phi3:mini
+    
+    *(Sau khi tải xong nó sẽ hiện ra dấu nhắc lệnh để chat, bạn có thể gõ `/bye` để thoát).*
+
+### 3. Cài đặt thư viện phụ thuộc (Dependencies)
+Tiếp theo, bạn cần cài đặt các thư viện mã nguồn mở cho cả Python và Node.js.
+Mở Terminal / Command Prompt và di chuyển vào thư mục dự án (ví dụ: `cd D:\demo_phanthu`).
+
+**A. Đối với Python:**
+Chạy lần lượt các lệnh sau:
+
+# Cài đặt các thư viện cần thiết
+pip install flask requests colorlog openpyxl python-docx playwright
+
+# Cài đặt trình duyệt tự động cho Playwright (dùng để cào dữ liệu web tự động)
+playwright install
+
+**B. Đối với Node.js (WhatsApp Web):**
+Di chuyển vào thư mục `whatsapp_server` và cài đặt các package:
+
+cd whatsapp_server
+npm install
+
+
+### 4. Cấu hình hệ thống (Setup)
+Mở file `config.py` ở thư mục gốc (D:\demo_phanthu) và kiểm tra/điều chỉnh các thông số quan trọng:
+*   `WHATSAPP_PHONE`: Điền số điện thoại (có cài WhatsApp) của Lãnh đạo hoặc người phê duyệt để bot gửi thông báo đến. Format bắt đầu bằng `+84...` (Ví dụ: `+84912345678`).
+*   Các thông số khác như `WEB_USERNAME`, `WEB_PASSWORD` (nếu dùng thật trên trang `dhtn.dcs.vn`) hoặc các luật lệ tự động (`RULES`) có thể được tùy chỉnh tại đây.
+
+### 5. Khởi chạy hệ thống
+Sau khi đã cài đặt xong tất cả, bạn chỉ cần quay lại thư mục gốc của dự án (`D:\demo_phanthu`) và chạy file `start.bat`. File này sẽ tự động:
+1.  Khởi động máy chủ web giả lập (Mock Web).
+2.  Kiểm tra xem Ollama đã chạy chưa.
+3.  Khởi động máy chủ WhatsApp Node.js.
+4.  Khởi động ứng dụng lõi Flask.
+
+**Lưu ý trong lần chạy đầu tiên:**
+*   Khi cửa sổ **WhatsApp Server** hiện lên, nó sẽ sinh ra một **Mã QR**. Bạn cần mở ứng dụng WhatsApp trên điện thoại (đã đăng nhập số điện thoại dùng làm con Bot), vào phần "Thiết bị liên kết" (Linked Devices) và **quét mã QR này** để đăng nhập Bot.
+*   Giao diện quản lý chính sẽ tự động mở trên trình duyệt của bạn tại địa chỉ: `http://localhost:5000`
+
+Từ các lần sau, bạn chỉ cần mở máy, chạy `start.bat` là hệ thống sẽ sẵn sàng làm việc!
