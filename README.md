@@ -1,5 +1,4 @@
 # Hệ Thống Phân Thư Tự Động
-## Đảng Ủy Phường Tây Nam
 
 ### 1. Giới thiệu & Các công cụ sử dụng
 Hệ thống giúp tự động tiếp nhận, phân loại và chuyển tiếp các văn bản/thư đến một cách thông minh, tiết kiệm thời gian cho người quản lý.
