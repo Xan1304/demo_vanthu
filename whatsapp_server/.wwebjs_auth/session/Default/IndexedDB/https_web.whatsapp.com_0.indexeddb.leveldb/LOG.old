@@ -1,0 +1,12 @@
+2026/06/16-21:45:34.974 5984 Reusing MANIFEST D:\demo_phanthu\whatsapp_server\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/16-21:45:34.974 5984 Recovering log #32
+2026/06/16-21:45:34.989 5984 Reusing old log D:\demo_phanthu\whatsapp_server\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000032.log 
+2026/06/16-21:45:41.663 5754 Level-0 table #37: started
+2026/06/16-21:45:41.680 5754 Level-0 table #37: 1014700 bytes OK
+2026/06/16-21:45:41.682 5754 Delete type=0 #32
+2026/06/16-21:45:50.946 5754 Compacting 1@1 + 1@2 files
+2026/06/16-21:45:51.049 5754 Generated table #38@1: 57648 keys, 2138575 bytes
+2026/06/16-21:45:51.049 5754 Compacted 1@1 + 1@2 files => 2138575 bytes
+2026/06/16-21:45:51.050 5754 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/06/16-21:45:51.051 5754 Delete type=2 #34
+2026/06/16-21:45:51.051 5754 Delete type=2 #37

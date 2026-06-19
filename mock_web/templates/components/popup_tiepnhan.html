@@ -1,0 +1,31 @@
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <span>Tiếp nhận văn bản</span>
+            <button class="btn btn-secondary" onclick="closePopup()">X</button>
+        </div>
+        <div class="popup-body">
+            <h4>Thông tin văn bản</h4>
+            <p><strong>Cơ quan ban hành:</strong> {{ doc.co_quan }}</p>
+            <p><strong>Số/Ký hiệu:</strong> {{ doc.so_ky_hieu }}</p>
+            <p><strong>Trích yếu:</strong> {{ doc.trich_yeu }}</p>
+
+            <h4 style="margin-top:20px;">Thông tin tiếp nhận</h4>
+            <div class="form-group">
+                <label>Sổ văn bản</label>
+                <select class="form-control">
+                    <option>Sổ văn bản đến 2026</option>
+                    <option>Sổ văn bản đến 2025</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Số đến</label>
+                <input type="text" class="form-control" value="{{ doc.so_den }}">
+            </div>
+        </div>
+        <div class="popup-footer">
+            <button class="btn btn-secondary" onclick="closePopup()">Đóng</button>
+            <button class="btn btn-primary btn-tiep-nhan" onclick="tiepNhan('{{ doc.id }}')">Tiếp nhận & đóng dấu</button>
+        </div>
+    </div>
+</div>

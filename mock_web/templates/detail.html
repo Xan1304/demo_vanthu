@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chi tiết văn bản</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="header-bar">
+        <span>🚩</span>
+        <h1>ĐẢNG ỦY PHƯỜNG TÂY NAM</h1>
+    </div>
+    
+    <div class="main-content">
+        <div style="border-bottom:1px solid #ccc; padding-bottom:10px; margin-bottom:15px;">
+            <h2 style="margin:0; color:#8B0000;">Thông tin chi tiết văn bản</h2>
+        </div>
+        
+        <div style="display:flex; gap:20px;">
+            <div style="flex:1;">
+                <p><strong>Cơ quan ban hành:</strong> {{ doc.co_quan }}</p>
+                <p><strong>Số/Ký hiệu:</strong> <span class="so-ky-hieu">{{ doc.so_ky_hieu }}</span></p>
+                <p><strong>Ngày văn bản:</strong> {{ doc.ngay_van_ban }}</p>
+                <p><strong>Trích yếu:</strong> <span class="trich-yeu">{{ doc.trich_yeu }}</span></p>
+            </div>
+            <div style="flex:1;">
+                <p><strong>Mã định danh:</strong> {{ doc.ma_dinh_danh }}</p>
+                <p><strong>Người ký:</strong> {{ doc.nguoi_ky }}</p>
+                <p><strong>Độ khẩn:</strong> {{ doc.do_khan }}</p>
+                <p><strong>Số bản:</strong> {{ doc.so_ban }}</p>
+            </div>
+        </div>
+
+        <h3 style="background:#f5f5f5; padding:5px; margin-top:20px;">File đính kèm</h3>
+        <p><a href="#">{{ doc.file_dinh_kem }}</a></p>
+
+        <div style="margin-top:30px; padding-top:15px; border-top:1px solid #ccc; text-align:center;">
+            <button class="btn btn-primary btn-tiep-nhan" onclick="loadPopupTiepNhan()">Tiếp nhận</button>
+            <button class="btn btn-primary btn-chuyen" onclick="loadPopupChuyen()">Chuyển văn bản</button>
+            <button class="btn btn-secondary" onclick="window.history.back()">Đóng</button>
+        </div>
+    </div>
+
+    <div id="popup-container"></div>
+
+    <script>
+        function loadPopupTiepNhan() {
+            fetch('/api/popup_tiepnhan/{{ doc.id }}')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('popup-container').innerHTML = html;
+                document.getElementById('popupOverlay').style.display = 'block';
+            });
+        }
+        
+        function loadPopupChuyen() {
+            fetch('/api/popup_chuyen/{{ doc.id }}')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('popup-container').innerHTML = html;
+                document.getElementById('popupOverlay').style.display = 'block';
+            });
+        }
+        
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
+
+        function submitChuyen() {
+            // Lấy dữ liệu từ popup (giả lập logic của dhtn.dcs.vn)
+            let chuTri = null;
+            let phoiHop = [];
+            let nhanDeBiet = [];
+            
+            document.querySelectorAll('input.cb-chu-tri:checked').forEach(cb => {
+                chuTri = cb.closest('tr').querySelector('.ten-can-bo').innerText;
+            });
+            
+            let yKien = document.querySelector('.y-kien-chuyen').value;
+            
+            fetch('/api/chuyen/{{ doc.id }}', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chu_tri: chuTri,
+                    phoi_hop: phoiHop,
+                    nhan_de_biet: nhanDeBiet,
+                    y_kien: yKien
+                })
+            }).then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    alert(data.message);
+                    closePopup();
+                    window.location.href = '/inbox';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

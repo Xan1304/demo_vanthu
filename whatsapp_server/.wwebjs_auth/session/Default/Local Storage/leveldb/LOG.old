@@ -1,0 +1,6 @@
+2026/06/16-21:45:34.401 2878 Reusing MANIFEST D:\demo_phanthu\whatsapp_server\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2026/06/16-21:45:34.406 2878 Recovering log #4
+2026/06/16-21:45:34.408 2878 Reusing old log D:\demo_phanthu\whatsapp_server\.wwebjs_auth\session\Default\Local Storage\leveldb/000004.log 
+2026/06/16-21:47:35.010 2878 Level-0 table #8: started
+2026/06/16-21:47:35.019 2878 Level-0 table #8: 13874 bytes OK
+2026/06/16-21:47:35.024 2878 Delete type=0 #4

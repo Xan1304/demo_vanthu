@@ -1,0 +1,87 @@
+2026-06-14 21:37:50,568 - INFO - Đã khởi động Playwright browser. URL: http://localhost:8080
+2026-06-14 21:37:54,589 - INFO - Đang lấy danh sách thư chờ...
+2026-06-14 21:37:57,078 - INFO - Đã đóng browser.
+2026-06-14 21:38:29,159 - ERROR - Lỗi kết nối Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2026-06-14 21:38:29,162 - WARNING - Fallback về kinh_te
+2026-06-14 21:38:29,259 - INFO - Đã tạo file Excel mẫu với 5 dòng mock data.
+2026-06-14 21:38:29,268 - INFO - Đã ghi vào Excel thành công: 307-CV/DU
+2026-06-14 21:39:01,577 - ERROR - Lỗi kết nối Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2026-06-14 21:39:01,599 - WARNING - Fallback về kinh_te
+2026-06-14 21:39:01,636 - INFO - Đã ghi vào Excel thành công: 164/KH-UBND
+2026-06-14 21:39:01,779 - INFO - Tầng 1 match: tài chính -> kinh_te
+2026-06-14 21:39:01,798 - INFO - Đã ghi vào Excel thành công: 402/KT-HTDT-TCNS
+2026-06-14 21:39:34,004 - ERROR - Lỗi kết nối Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2026-06-14 21:39:34,004 - WARNING - Fallback về kinh_te
+2026-06-14 21:39:34,014 - INFO - Đã ghi vào Excel thành công: 306-CV/DU
+2026-06-14 21:43:21,582 - INFO - Đã khởi động Playwright browser. URL: http://localhost:8080
+2026-06-14 21:43:25,715 - INFO - Đang lấy danh sách thư chờ...
+2026-06-14 21:43:27,823 - INFO - Đã đóng browser.
+2026-06-14 21:43:59,860 - ERROR - Lỗi kết nối Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2026-06-14 21:43:59,864 - WARNING - Fallback về kinh_te
+2026-06-14 21:43:59,921 - INFO - Đã ghi vào Excel thành công: 307-CV/DU
+2026-06-14 21:44:32,207 - ERROR - Lỗi kết nối Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2026-06-14 21:44:32,211 - WARNING - Fallback về kinh_te
+2026-06-14 21:44:32,311 - INFO - Đã ghi vào Excel thành công: 164/KH-UBND
+2026-06-14 21:44:32,364 - INFO - Tầng 1 match: tài chính -> kinh_te
+2026-06-14 21:44:32,496 - INFO - Đã ghi vào Excel thành công: 402/KT-HTDT-TCNS
+2026-06-14 21:45:04,697 - ERROR - Lỗi kết nối Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2026-06-14 21:45:04,701 - WARNING - Fallback về kinh_te
+2026-06-14 21:45:04,816 - INFO - Đã ghi vào Excel thành công: 306-CV/DU
+2026-06-14 21:46:03,920 - INFO - Đã khởi động Playwright browser. URL: http://localhost:8080
+2026-06-14 21:46:08,302 - INFO - Đang lấy danh sách thư chờ...
+2026-06-14 21:46:10,548 - INFO - Đã đóng browser.
+2026-06-14 21:47:15,321 - INFO - Đã khởi động Playwright browser. URL: http://localhost:8080
+2026-06-14 21:47:19,568 - INFO - Đang lấy danh sách thư chờ...
+2026-06-14 21:47:21,406 - INFO - Đã đóng browser.
+2026-06-14 21:47:21,406 - INFO - Tầng 1 match: kinh tế -> kinh_te
+2026-06-14 21:47:21,422 - INFO - Đã ghi vào Excel thành công: 101/UBND-KT
+2026-06-14 21:47:21,538 - INFO - Tầng 1 match: văn hóa -> van_hoa
+2026-06-14 21:47:21,555 - INFO - Đã ghi vào Excel thành công: 202/SVHTT-VH
+2026-06-14 21:47:21,654 - INFO - Tầng 1 match: xã hội -> xa_hoi
+2026-06-14 21:47:21,662 - INFO - Đã ghi vào Excel thành công: 303/SLĐTBXH-XH
+2026-06-14 21:47:21,749 - INFO - Tầng 1 match: kinh tế -> kinh_te
+2026-06-14 21:47:21,758 - INFO - Đã ghi vào Excel thành công: 104/CT-BTC
+2026-06-14 21:47:21,827 - INFO - Tầng 1 match: xã hội -> xa_hoi
+2026-06-14 21:47:21,839 - INFO - Đã ghi vào Excel thành công: 505/SGDĐT-XH
+2026-06-16 21:46:18,605 - ERROR - Lỗi kết nối Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2026-06-16 21:46:18,606 - WARNING - Fallback về kinh_te
+2026-06-16 21:46:18,640 - INFO - Đã ghi vào Excel thành công: 123-CV-UBND
+2026-06-16 21:46:18,640 - INFO - Tầng 1 match: kinh tế -> kinh_te
+2026-06-16 21:46:18,679 - INFO - Đã ghi vào Excel thành công: a
+2026-06-16 21:46:50,718 - ERROR - Lỗi kết nối Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2026-06-16 21:46:50,719 - WARNING - Fallback về kinh_te
+2026-06-16 21:46:50,764 - INFO - Đã ghi vào Excel thành công: b
+2026-06-16 21:46:50,765 - INFO - Tầng 1 match: văn hóa -> van_hoa
+2026-06-16 21:46:50,800 - INFO - Đã ghi vào Excel thành công: c
+2026-06-16 21:47:23,045 - INFO - Đã khởi động Playwright browser. URL: http://localhost:8080
+2026-06-16 21:47:23,423 - INFO - Đã khởi động Playwright browser. URL: http://localhost:8080
+2026-06-16 21:47:27,384 - INFO - Đang chuyển thư doc_460a7e79...
+2026-06-16 21:47:27,658 - INFO - Đang chuyển thư doc_460a7e79...
+2026-06-16 21:47:38,239 - ERROR - Lỗi khi chuyển thư: Page.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("button.btn-chuyen")
+
+2026-06-16 21:47:38,432 - INFO - Đã đóng browser.
+2026-06-16 21:47:39,291 - ERROR - Lỗi khi chuyển thư: Page.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("button.btn-chuyen")
+
+2026-06-16 21:47:39,485 - INFO - Đã đóng browser.
+2026-06-16 21:58:42,265 - ERROR - Lỗi kết nối Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2026-06-16 21:58:42,265 - WARNING - Fallback về kinh_te
+2026-06-16 21:58:42,313 - INFO - Đã ghi vào Excel thành công: 123-CV-UBND
+2026-06-16 21:58:42,315 - INFO - Tầng 1 match: kinh tế -> kinh_te
+2026-06-16 21:58:42,352 - INFO - Đã ghi vào Excel thành công: a
+2026-06-16 21:58:42,353 - INFO - Tầng 1 match: kinh tế -> kinh_te
+2026-06-16 21:58:42,394 - INFO - Đã ghi vào Excel thành công: akt
+2026-06-16 21:58:42,394 - INFO - Tầng 1 match: văn hóa -> van_hoa
+2026-06-16 21:58:42,426 - INFO - Đã ghi vào Excel thành công: bvh
+2026-06-16 21:58:42,427 - INFO - Tầng 1 match: xã hội -> xa_hoi
+2026-06-16 21:58:42,461 - INFO - Đã ghi vào Excel thành công: cxh
+2026-06-16 22:00:04,747 - INFO - Đã khởi động Playwright browser. URL: http://localhost:8080
+2026-06-16 22:00:09,038 - INFO - Đang chuyển thư doc_41394673...
+2026-06-16 22:00:34,235 - ERROR - Lỗi khi chuyển thư: Page.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("button.btn-chuyen")
+
+2026-06-16 22:00:34,417 - INFO - Đã đóng browser.

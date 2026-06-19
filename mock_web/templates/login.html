@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng nhập - Quản lý văn bản</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body style="background-color: #e9ecef;">
+    <div class="header-bar">
+        <span>🚩</span>
+        <h1>ĐẢNG ỦY PHƯỜNG TÂY NAM</h1>
+    </div>
+    
+    <div class="login-container">
+        <h2 style="text-align:center; color:#8B0000; margin-bottom:20px;">HỆ THỐNG QUẢN LÝ VĂN BẢN</h2>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label>Tên đăng nhập</label>
+                <input type="text" class="form-control" name="username" required>
+            </div>
+            <div class="form-group">
+                <label>Mật khẩu</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; padding:10px;">Đăng nhập</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hòm thư - Quản lý văn bản</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="header-bar">
+        <span>🚩</span>
+        <h1>ĐẢNG ỦY PHƯỜNG TÂY NAM</h1>
+    </div>
+    
+    <div class="main-content">
+        <div class="tabs">
+            <div class="tab active">Văn bản đơn vị</div>
+            <div class="tab">Văn bản cá nhân</div>
+        </div>
+        
+        <div class="sub-tabs">
+            <div class="sub-tab active">Chờ tiếp nhận</div>
+            <div class="sub-tab">Chờ xử lý</div>
+            <div class="sub-tab">Đã trả lại</div>
+            <div class="sub-tab">Tất cả</div>
+        </div>
+
+        <table class="van-ban-table">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Thao tác</th>
+                    <th>Nguồn gốc</th>
+                    <th>Đơn vị ban hành</th>
+                    <th>Số/Ký hiệu</th>
+                    <th>Trích yếu</th>
+                    <th>Độ khẩn</th>
+                    <th>Độ mật</th>
+                    <th>Thời gian nhận</th>
+                    <th>File văn bản</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doc in documents %}
+                <tr id="row-{{ doc.id }}" {% if doc.trang_thai != 'cho_tiep_nhan' %}style="display:none;"{% endif %}>
+                    <td style="text-align:center;">{{ loop.index }}</td>
+                    <td style="text-align:center; min-width:80px;">
+                        <button class="btn-tiep-nhan" onclick="tiepNhan('{{ doc.id }}')">Nhận</button>
+                    </td>
+                    <td>{{ doc.nguon_goc }}</td>
+                    <td>{{ doc.don_vi_ban_hanh }}</td>
+                    <td class="so-ky-hieu">
+                        <a href="/document/{{ doc.id }}">{{ doc.so_ky_hieu }}</a>
+                    </td>
+                    <td class="trich-yeu">
+                        <span class="badge badge-gt">GT</span>
+                        {{ doc.trich_yeu }}
+                    </td>
+                    <td>
+                        {% if doc.do_khan == 'Hỏa tốc' %}
+                        <span class="badge badge-hoa-toc">Hỏa tốc</span>
+                        {% elif doc.do_khan == 'Thường' %}
+                        <span class="badge badge-thuong">Thường</span>
+                        {% else %}
+                        <span class="badge badge-binh-thuong">{{ doc.do_khan }}</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ doc.do_mat }}</td>
+                    <td>{{ doc.ngay_den }}</td>
+                    <td><a href="#">{{ doc.file_dinh_kem }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Nơi load popup HTML bằng JS (mock for scraper) -->
+    <div id="popup-container"></div>
+
+    <script>
+        function tiepNhan(docId) {
+            fetch(`/api/tiepnhan/${docId}`, { method: 'POST' })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    alert(`Đã tiếp nhận. Số đến: ${data.so_den}`);
+                    document.getElementById('row-' + docId).style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

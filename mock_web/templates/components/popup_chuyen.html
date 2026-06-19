@@ -1,0 +1,47 @@
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <span>Chuyển văn bản ({{ doc.so_ky_hieu }})</span>
+            <button class="btn btn-secondary" onclick="closePopup()">X</button>
+        </div>
+        <div class="popup-body">
+            <div class="form-group">
+                <label>Ý kiến chuyển (2000) <a href="#" style="float:right; font-weight:normal;">Chọn mẫu</a></label>
+                <textarea class="y-kien-chuyen"></textarea>
+            </div>
+
+            <h4 style="border-bottom: 1px solid #ccc; padding-bottom:5px;">Danh sách cá nhân</h4>
+            <table class="van-ban-table">
+                <thead>
+                    <tr>
+                        <th>Chủ trì</th>
+                        <th>Phối hợp</th>
+                        <th>Nhận để biết</th>
+                        <th>Họ và Tên</th>
+                        <th>Chức vụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cb in can_bo_list %}
+                    <tr>
+                        <td style="text-align:center;"><input type="checkbox" class="cb-chu-tri"></td>
+                        <td style="text-align:center;"><input type="checkbox" class="cb-phoi-hop"></td>
+                        <td style="text-align:center;"><input type="checkbox" class="cb-nhan-de-biet"></td>
+                        <td class="ten-can-bo">{{ cb.ho_ten }}</td>
+                        <td>{{ cb.chuc_vu }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="form-group" style="margin-top:15px;">
+                <label><input type="checkbox" checked> Gửi tin nhắn thông báo</label>
+            </div>
+        </div>
+        <div class="popup-footer">
+            <button class="btn btn-secondary" onclick="closePopup()">Đóng</button>
+            <button class="btn btn-primary">Ghi lại</button>
+            <button class="btn btn-primary btn-chuyen" onclick="submitChuyen()">Chuyển văn bản</button>
+        </div>
+    </div>
+</div>
